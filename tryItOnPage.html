@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src='js/jQuery.min.js'></script>
+<script src="js/jquery-ui.js"></script>
+<link rel="stylesheet" href="css/jquery-ui.css">
+
+</head>
+<body>
+	<div>
+		<input type = 'button' id ='tryItOn' value = 'Try it on'>
+	</div>
+	<p>This page wants to say "Hello!"<br>
+Be nice and press the button.</p>
+<button id="say_it">Say "Hello!"</button>
+<div id="hello"><p><font face="Georgia" size="4">
+Hey, world, I just said "Hello!"</font></p></div>
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+$( "#hello" ).dialog({ autoOpen: false });
+$( "#say_it" ).click(function() {
+ $( "#hello" ).dialog({
+resizable: false,
+height:240,
+modal: true,
+title : false,
+buttons: {
+"Delete all items": function() {
+$( this ).dialog( "close" );
+},
+Cancel: function() {
+$( this ).dialog( "close" );
+}
+}
+});
+
+ // var page = "http://somurl.com/asom.php.aspx";
+ var page = "take_measurement.php"
+
+var $dialog = $('#hello')
+               .html('<iframe style="border: 0px; " src="' + page + '" width="100%" height="100%"></iframe>')
+               .dialog({
+                   autoOpen: false,
+                   modal: true,
+                   height: 650,
+                   width: 900,
+                   title: ""
+               });
+$dialog.dialog('open');
+//  $( "#hello" ).dialog({'open'});
+});
+});
+</script>
+</html>
+url("images/ui-icons_888888_256x240.png")
