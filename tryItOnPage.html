@@ -27,27 +27,29 @@ resizable: false,
 height:240,
 modal: true,
 title : false,
-buttons: {
+/* buttons: {
 "Delete all items": function() {
 $( this ).dialog( "close" );
 },
 Cancel: function() {
 $( this ).dialog( "close" );
-}
-}
+} 
+} */
 });
 
  // var page = "http://somurl.com/asom.php.aspx";
- var page = "take_measurement.php"
-
+ var page = "take_measurement.php?gender=M"
+var dialogHeight = $(window).height();
+ var dialogWidth = $(window).width();
 var $dialog = $('#hello')
                .html('<iframe style="border: 0px; " src="' + page + '" width="100%" height="100%"></iframe>')
                .dialog({
                    autoOpen: false,
                    modal: true,
-                   height: 650,
-                   width: 900,
-                   title: ""
+                   height: dialogHeight-10,
+                   width: dialogWidth-200,
+                   title: "",
+                   draggable : false,
                });
 $dialog.dialog('open');
 //  $( "#hello" ).dialog({'open'});

@@ -1,16 +1,19 @@
 <?php
 $gender = $_GET['gender'];
-$productId = $_GET['productId'];
-$gender = 'M';
+// $productId = $_GET['productId'];
+// $gender = 'M';
 ?>
 <html>
 	<head>
 		<script type="text/javascript" src='js/jQuery.min.js'></script>
+		<style>
+			
+		</style>
 	</head>
 	<body>
 		<div border = '1' style= 'height:99%;width:99%;<!-- border: 1px solid black; -->'>
 			<div  border = '1' style= 'height:97%;width:32%;float:left;border: 1px solid red;'>
-				<div border = '1' style= 'height:32%;width:100%;float:left;border: 1px solid green;'>
+				<div border = '1' style= 'height:22%;width:100%;float:left;border: 1px solid green;'>
 
 				</div>
 				<div border = '1' style= 'height:64%;width:100%;float:left;border: 1px solid blue;'>
@@ -32,16 +35,15 @@ $gender = 'M';
 							<label>ARM</label>
 							<input type="text" id = 'arm' name = 'arm'>
 						</div>
-						<?php } else { ?>
 						<div id='femaleMeasurement' <?php if($gender == 'M') {?>style = 'display:none' <?php } ?>>
 							<label>HEIGHT</label>
 							<input type="text" id = 'height' name = 'height'><br/>
 
-							<label>NECK</label>
-							<input type="text" id = 'neck' name = 'neck'><br/>
+							<label>BUST</label>
+							<input type="text" id = 'bust' name = 'bust'><br/>
 
-							<label>CHEST</label>
-							<input type="text" id = 'chest' name = 'chest'><br/>
+							<label>HIPS</label>
+							<input type="text" id = 'hips' name = 'hips'><br/>
 
 							<label>WAIST</label>
 							<input type="text" id = 'waist' name = 'waist'><br/>
@@ -49,14 +51,16 @@ $gender = 'M';
 							<label>ARM</label>
 							<input type="text" id = 'arm' name = 'arm'>
 						</div>
-						<?php } ?>
 					</div>
+				</div>
+				<div>
+						<input type = 'button' value = 'Show Virtual Me '>
 				</div>
 			</div>
 			<div  border = '1' style= 'height:97%;width:32%;float:left;border: 1px solid red;'>
 				<div>
 					<div id="manAvtar" style="display: block;">
-				        <img src="images/avatar/man/stand.png" class="default" alt="" style="display: inline;position: absolute;height: 80%;">
+				        <img src="images/avatar/man/stand.png" class="default" alt="" style="<?php if($gender == 'F') {?> display:none;  <?php } else {?> display: inline; <?php } ?>position: absolute;height: 80%;">
 				        <img src="images/avatar/man/stand.png" class="height" alt="How to measure height" style="display: none;position: absolute;height: 80%;">
 				        <img src="images/avatar/man/arm.png" class="arm" alt="How to measure arm" style="display: none;position: absolute;height: 80%;">
 				        <img src="images/avatar/man/neck.png" class="neck" alt="How to measure neck" style="display: none;position: absolute;height: 80%;">
@@ -65,11 +69,11 @@ $gender = 'M';
 				    </div>
 
 				    <div id="womanAvtar" style="display: block;">
-				        <img src="images/avatar/woman/stand.png" class="default" alt="" style="display: inline;position: absolute;height: 80%;">
+				        <img src="images/avatar/woman/stand.png" class="default" alt="" style="<?php if($gender == 'M') {?> display:none;  <?php } else {?> display: inline; <?php } ?>position: absolute;height: 80%;">
 				        <img src="images/avatar/woman/stand.png" class="height" alt="How to measure height" style="display: none;position: absolute;height: 80%;">
 				        <img src="images/avatar/woman/arm.png" class="arm" alt="How to measure arm" style="display: none;position: absolute;height: 80%;">
-				        <img src="images/avatar/woman/neck.png" class="neck" alt="How to measure neck" style="display: none;position: absolute;height: 80%;">
-				        <img src="images/avatar/woman/chest.png" class="chest" alt="How to measure chest" style="display: none;position: absolute;height: 80%;">
+				        <img src="images/avatar/woman/bust.png" class="bust" alt="How to measure neck" style="display: none;position: absolute;height: 80%;">
+				        <img src="images/avatar/woman/hips.png" class="hips" alt="How to measure chest" style="display: none;position: absolute;height: 80%;">
 				        <img src="images/avatar/woman/waist.png" class="waist" alt="How to measure waist" style="display: none;position: absolute;height: 80%;">
 				    </div>
 				</div>
